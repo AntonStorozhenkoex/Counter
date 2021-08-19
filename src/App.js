@@ -1,20 +1,19 @@
 import {useState} from "react";
-import ButtonPlus from "./ButtonPlus";
-import ButtonMinus from "./ButtonMinus";
+import Button from "./Button";
 
 function App() {
-  const [count,setCount] =useState(0)
-  return (
-    <div>
-      <ButtonPlus
-          count={count}
-          setCount={setCount}/>
-      {count}
-      <ButtonMinus
-          count={count}
-          setCount={setCount}/>
-    </div>
-  );
+    const [count, setCount] = useState(0)
+    return (
+        <div>
+            <Button
+                str={`+1`}
+                onClick={() => setCount(count + 1)}/>
+            {count}
+            <Button
+                str={'-1'}
+                onClick={() => setCount(count - 1)}/>
+        </div>
+    );
 }
 
 export default App;
